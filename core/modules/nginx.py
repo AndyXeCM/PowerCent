@@ -4,7 +4,7 @@
 # Copyright (c) 2012 - 2016, VPSMate development team
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the (new) BSD License.
+# PowerCent is distributed under the terms of the (new) BSD License.
 # The full license can be found in 'LICENSE'.
 
 '''Module for Nginx Management'''
@@ -719,7 +719,7 @@ def _getcontextrange(context, config):
     return [filepath, line_start, line_end]
 
 def _context_commentserver(ip, port, server_name, config=None):
-    """Comment a context using InPanel's special comment string '#v#'
+    """Comment a context using PowerCent's special comment string '#v#'
     """
     if not config or config['_isdirty']:
         config = loadconfig(NGINXCONF, True)
@@ -729,7 +729,7 @@ def _context_commentserver(ip, port, server_name, config=None):
     return _comment(filepath, line_start, line_end)
 
 def _context_uncommentserver(ip, port, server_name, config=None):
-    """Uncomment a InPanel's special-commented context.
+    """Uncomment a PowerCent's special-commented context.
     """
     if not config or config['_isdirty']:
         config = loadconfig(NGINXCONF, True)

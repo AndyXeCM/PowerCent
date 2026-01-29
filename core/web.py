@@ -4,7 +4,7 @@
 # Copyright (c) 2012, VPSMate development team
 # All rights reserved.
 #
-# InPanel is distributed under the terms of The New BSD License.
+# PowerCent is distributed under the terms of The New BSD License.
 # The full license can be found in 'LICENSE'.
 
 '''Module for Web Querying'''
@@ -650,7 +650,7 @@ class UtilsTimeHandler(RequestHandler):
                 self.write({'code': -1, 'msg': u'时区设置保存失败！'})
 
 class SettingHandler(RequestHandler):
-    """Settings for InPanel
+    """Settings for PowerCent
     """
     @tornado.web.asynchronous
     @tornado.gen.engine
@@ -3995,64 +3995,64 @@ class BackendHandler(RequestHandler):
     @tornado.web.asynchronous
     @tornado.gen.engine
     def inpanel_install(self, ssh_ip, ssh_port, ssh_user, ssh_password, instance_name, accessnet, accessport=None, accesskey=None):
-        """Install InPanel"""
+        """Install PowerCent"""
         jobname = 'inpanel_install_%s' % ssh_ip
         if not self._start_job(jobname): return
 
-        self._update_job(jobname, 2, u'正在将 InPanel 安装到 %s...' % ssh_ip)
+        self._update_job(jobname, 2, u'正在将 PowerCent 安装到 %s...' % ssh_ip)
 
         result = yield tornado.gen.Task(callbackable(remote.inpanel_install),
                     ssh_ip, ssh_port, ssh_user, ssh_password, accesskey=accesskey, inpanel_port=accessport)
         if result == True:
             code = 0
-            msg = u'InPanel 安装成功！'
+            msg = u'PowerCent 安装成功！'
             self.config.set('inpanel', instance_name, '%s|%s|%s' % (accesskey, accessnet, accessport))
         else:
             code = -1
-            msg = u'InPanel 安装过程中发生错误！'
+            msg = u'PowerCent 安装过程中发生错误！'
 
         self._finish_job(jobname, code, msg)
 
     @tornado.web.asynchronous
     @tornado.gen.engine
     def inpanel_uninstall(self, ssh_ip, ssh_port, ssh_user, ssh_password, instance_name):
-        """Uninstall InPanel"""
+        """Uninstall PowerCent"""
         jobname = 'inpanel_uninstall_%s' % ssh_ip
         if not self._start_job(jobname): return
 
-        self._update_job(jobname, 2, u'正在卸载 %s 上的 InPanel...' % ssh_ip)
+        self._update_job(jobname, 2, u'正在卸载 %s 上的 PowerCent...' % ssh_ip)
         result = yield tornado.gen.Task(callbackable(remote.inpanel_uninstall),
                     ssh_ip, ssh_port, ssh_user, ssh_password)
         if result == True:
             code = 0
-            msg = u'InPanel 卸载成功！'
+            msg = u'PowerCent 卸载成功！'
             try:
                 self.config.remove_option('inpanel', instance_name)
             except:
                 pass
         else:
             code = -1
-            msg = u'InPanel 卸载过程中发生错误！'
+            msg = u'PowerCent 卸载过程中发生错误！'
 
         self._finish_job(jobname, code, msg)
 
     @tornado.web.asynchronous
     @tornado.gen.engine
     def inpanel_config(self, ssh_ip, ssh_port, ssh_user, ssh_password, accesskey=None):
-        """Update InPanel Config"""
+        """Update PowerCent Config"""
         jobname = 'inpanel_config%s' % ssh_ip
         if not self._start_job(jobname): return
 
-        self._update_job(jobname, 2, u'正在更新 %s 上的 InPanel 配置...' % ssh_ip)
+        self._update_job(jobname, 2, u'正在更新 %s 上的 PowerCent 配置...' % ssh_ip)
 
         result = yield tornado.gen.Task(callbackable(remote.inpanel_config),
                     ssh_ip, ssh_port, ssh_user, ssh_password, accesskey=accesskey)
         if result == True:
             code = 0
-            msg = u'InPanel 配置更新成功！'
+            msg = u'PowerCent 配置更新成功！'
         else:
             code = -1
-            msg = u'InPanel 配置更新过程中发生错误！'
+            msg = u'PowerCent 配置更新过程中发生错误！'
 
         self._finish_job(jobname, code, msg)
 
@@ -4304,10 +4304,10 @@ class ECSHandler(RequestHandler):
                     result, instdata, reqid = response
                     if result: instances[i].update(instdata)
 
-            # get access info for InPanel
+            # get access info for PowerCent
             for instance in instances:
                 if not self.config.has_option('inpanel', instance['InstanceName']):
-                    instance['InPanelStatus'] = False
+                    instance['PowerCentStatus'] = False
                 else:
                     accessdata = self.config.get('inpanel', instance['InstanceName'])
                     accessdata = accessdata.split('|')
@@ -4316,7 +4316,7 @@ class ECSHandler(RequestHandler):
                         'accessnet': accessdata[1],
                         'accessport': accessdata[2],
                     }
-                    instance['InPanelStatus'] = accessinfo
+                    instance['PowerCentStatus'] = accessinfo
 
             self.write({'code': 0, 'msg': u'成功加载云服务器列表！', 'data': {
                 'instances': instances,
@@ -4560,7 +4560,7 @@ class ECSHandler(RequestHandler):
 
             self.config.set('inpanel', instance_name, '%s|%s|%s' % (accesskey, accessnet, accessport))
 
-            self.write({'code': 0, 'msg': u'InPanel 远程控制设置保存成功！'})
+            self.write({'code': 0, 'msg': u'PowerCent 远程控制设置保存成功！'})
             self.finish()
 
         else:
@@ -4568,8 +4568,8 @@ class ECSHandler(RequestHandler):
             self.finish()
 
 
-class InPanelIndexHandler(RequestHandler):
-    """Index page of InPanel.
+class PowerCentIndexHandler(RequestHandler):
+    """Index page of PowerCent.
     """
     def get(self, instance_name, ip, port):
         with open(joinpath(self.settings['inpanel_path'], 'index.html')) as f:
@@ -4581,8 +4581,8 @@ class InPanelIndexHandler(RequestHandler):
         self.write(html)
 
 
-class InPanelHandler(RequestHandler):
-    """Operation proxy of InPanel.
+class PowerCentHandler(RequestHandler):
+    """Operation proxy of PowerCent.
 
     REF: https://groups.google.com/forum/?fromgroups=#!topic/python-tornado/TB_6oKBmdlA
     """

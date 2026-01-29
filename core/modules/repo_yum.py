@@ -3,7 +3,7 @@
 # Copyright (c) 2020, doudoudzj
 # All rights reserved.
 #
-# InPanel is distributed under the terms of The New BSD License.
+# PowerCent is distributed under the terms of The New BSD License.
 # The full license can be found in 'LICENSE'.
 
 '''Module for YUM Management'''

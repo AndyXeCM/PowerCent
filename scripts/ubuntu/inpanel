@@ -6,10 +6,10 @@
 # Copyright (c) 2022 Jackson Dou
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the New BSD License.
+# PowerCent is distributed under the terms of the New BSD License.
 # The full license can be found in 'LICENSE'.
 #
-# InPanel control script for Ubuntu.
+# PowerCent control script for Ubuntu.
 #
 ### BEGIN INIT INFO
 # Provides:          inpanel
@@ -28,7 +28,7 @@
 set -e
 
 NAME='inpanel'
-DESC='InPanel Daemon'
+DESC='PowerCent Daemon'
 PIDFILE='/var/run/inpanel.pid'
 LOCKFILE="/var/lock/subsys/$NAME"
 DAEMON='/usr/local/inpanel/server.py'

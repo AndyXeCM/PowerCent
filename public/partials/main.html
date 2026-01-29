@@ -5,7 +5,7 @@
 
 <div id="main" ng-show="loaded" style="display:none">
     <div class="module-header">
-        <h3>欢迎使用 InPanel 控制面板</h3>
+        <h3>欢迎使用 PowerCent 控制面板</h3>
         <p>
             当前版本：v{{version.version}} b{{version.build}}&nbsp;&nbsp;
             <button class="btn btn-default btn-xs" ng-click="checkUpdate()" style="display:none" ng-show="!detectVer">
@@ -284,9 +284,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>InPanel</td>
+                            <td>PowerCent</td>
                             <td ng-bind-html-unsafe="info['service.inpanel']['status'] | service.status"></td>
-                            <td class="muted">服务器控制面板 InPanel</td>
+                            <td class="muted">服务器控制面板 PowerCent</td>
                         </tr>
                         <tr ng-show="info['service.nginx'] != null">
                             <td>Nginx</td>

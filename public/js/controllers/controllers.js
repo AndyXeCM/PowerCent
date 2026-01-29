@@ -439,7 +439,7 @@ var SettingCtrl = [
                             return false;
                         } else if (data.status == 'finish' && data.code == 0) {
                             // restart service
-                            $scope.upverMessage = '正在重启 InPanel...';
+                            $scope.upverMessage = '正在重启 PowerCent...';
                             Timeout(function () {
                                 Request.post('/api/backend/service_restart', {
                                     service: 'inpanel'
@@ -469,7 +469,7 @@ var SettingCtrl = [
                 Timeout(getUpdateStatus, 500, module);
             });
         };
-        $scope.restartMessage = '是否要重启 InPanel 服务 ？';
+        $scope.restartMessage = '是否要重启 PowerCent 服务 ？';
         $scope.restart = function () {
             $scope.restartMessage = '正在重启，请稍候...'
             $scope.showRestartBtn = false;

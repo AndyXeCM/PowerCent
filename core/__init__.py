@@ -3,15 +3,15 @@
 # Copyright (c) 2017, doudoudzj
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the (new) BSD License.
+# PowerCent is distributed under the terms of the (new) BSD License.
 # The full license can be found in 'LICENSE'.
 
-'''The InPanel Core.'''
+'''The PowerCent Core.'''
 
 
 import platform
 
-name = 'InPanel'
+name = 'PowerCent'
 version = '1.1.1'
 build = '30'
 releasetime = '2024-06-25'

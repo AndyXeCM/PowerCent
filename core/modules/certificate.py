@@ -3,7 +3,7 @@
 # Copyright (c) 2017, doudoudzj
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the New BSD License.
+# PowerCent is distributed under the terms of the New BSD License.
 # The full license can be found in 'LICENSE'.
 
 '''Module for certificate Management.'''
