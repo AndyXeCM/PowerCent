@@ -4,7 +4,7 @@
 # Copyright (c) 2012, VPSMate development team
 # All rights reserved.
 #
-# InPanel is distributed under the terms of The New BSD License.
+# PowerCent is distributed under the terms of The New BSD License.
 # The full license can be found in 'LICENSE'.
 
 '''Module for YUM(Yellow dog Updater, Modified) Management'''

@@ -32,7 +32,7 @@
                         <th>IP</th>
                         <th>系统安装镜像</th>
                         <th style="width:70px">状态</th>
-                        <th style="width:80px">InPanel</th>
+                        <th style="width:80px">PowerCent</th>
                         <th style="width:180px">操作</th>
                     </tr>
                 </thead>
@@ -56,23 +56,23 @@
                         </td>
                         <td>{{instance.Image.ImageCode}}</td>
                         <td ng-bind-html-unsafe="instance.Status | instance.status"></td>
-                        <td ng-bind-html-unsafe="instance.InPanelStatus | instance.inpanelstatus"></td>
+                        <td ng-bind-html-unsafe="instance.PowerCentStatus | instance.inpanelstatus"></td>
                         <td>
                             <a class="btn btn-small" href="#/ecs/{{instance.InstanceName|urlencode}},{{$ecs.access_key_id|urlencode}}">
                                 <i class="icon-wrench"></i> 管理
                             </a>
-                            <a ng-show="instance.InPanelStatus&&instance.InPanelStatus.accessnet=='public'" class="btn btn-small"
+                            <a ng-show="instance.PowerCentStatus&&instance.PowerCentStatus.accessnet=='public'" class="btn btn-small"
                                 href="/{{instance.InstanceName|urlencode}}/{{instance.PublicIpAddress.AllocateIpAddress|urlencode}}/8888/#/"
                                 target="_blank">
-                                <i class="icon-home"></i> 打开 InPanel
+                                <i class="icon-home"></i> 打开 PowerCent
                             </a>
-                            <a ng-show="instance.InPanelStatus&&instance.InPanelStatus.accessnet=='inner'" class="btn btn-small"
+                            <a ng-show="instance.PowerCentStatus&&instance.PowerCentStatus.accessnet=='inner'" class="btn btn-small"
                                 href="/{{instance.InstanceName|urlencode}}/{{instance.InnerIpAddress|urlencode}}/8888/#/"
                                 target="_blank">
-                                <i class="icon-home"></i> 打开 InPanel
+                                <i class="icon-home"></i> 打开 PowerCent
                             </a>
-                            <a ng-show="!instance.InPanelStatus" class="btn btn-small" href="#/ecs/{{instance.InstanceName|urlencode}},{{$ecs.access_key_id|urlencode}}?s=inpanel">
-                                <i class="icon-plus-sign"></i> 安装 InPanel
+                            <a ng-show="!instance.PowerCentStatus" class="btn btn-small" href="#/ecs/{{instance.InstanceName|urlencode}},{{$ecs.access_key_id|urlencode}}?s=inpanel">
+                                <i class="icon-plus-sign"></i> 安装 PowerCent
                             </a>
                         </td>
                     </tr>

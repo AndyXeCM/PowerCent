@@ -3,10 +3,10 @@
 # Copyright (c) 2017, Jackson Dou
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the New BSD License.
+# PowerCent is distributed under the terms of the New BSD License.
 # The full license can be found in 'LICENSE'.
 #
-# InPanel control script for Darwin.
+# PowerCent control script for Darwin.
 
 set -e
 
@@ -23,7 +23,7 @@ else
     exit
 fi
 
-APP_NAME='InPanel'
+APP_NAME='PowerCent'
 LAUNCHCTL='/bin/launchctl'
 SERVICE_NAME='org.inpanel.inpaneld'
 LAUNCHD_JOB="/Library/LaunchDaemons/$SERVICE_NAME.plist"

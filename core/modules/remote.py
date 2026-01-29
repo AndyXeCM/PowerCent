@@ -4,10 +4,10 @@
 # Copyright (c) 2012, ECSMate development team
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the (new) BSD License.
+# PowerCent is distributed under the terms of the (new) BSD License.
 # The full license can be found in 'LICENSE'.
 
-'''Package for InPanel operations for remote server.'''
+'''Package for PowerCent operations for remote server.'''
 
 
 import base64
@@ -18,7 +18,7 @@ import lib.pxssh as pxssh
 
 
 def inpanel_install(ssh_ip, ssh_port, ssh_user, ssh_password, accesskey=None, inpanel_ip=None, inpanel_port=None):
-    '''Install InPanel on a remote server.'''
+    '''Install PowerCent on a remote server.'''
     try:
         s = pxssh.pxssh()
         s.login(ssh_ip, ssh_user, ssh_password, port=ssh_port)
@@ -54,7 +54,7 @@ def inpanel_install(ssh_ip, ssh_port, ssh_user, ssh_password, accesskey=None, in
 
 
 def inpanel_uninstall(ssh_ip, ssh_port, ssh_user, ssh_password):
-    '''Uninstall InPanel on a remote server.'''
+    '''Uninstall PowerCent on a remote server.'''
     try:
         s = pxssh.pxssh()
         s.login(ssh_ip, ssh_user, ssh_password, port=ssh_port)

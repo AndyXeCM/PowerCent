@@ -5,10 +5,10 @@
 # Copyright (c) 2012, VPSMate development team
 # All rights reserved.
 #
-# InPanel is distributed under the terms of The New BSD License.
+# PowerCent is distributed under the terms of The New BSD License.
 # The full license can be found in 'LICENSE'.
 
-''' Install Script for InPanel '''
+''' Install Script for PowerCent '''
 
 import getpass
 import os
@@ -185,9 +185,9 @@ class Install(object):
         print('[ %s ]' % OK)
 
     def handle_inpanel(self):
-        # handle InPanel
-        # get the latest InPanel version
-        print('* Installing InPanel')
+        # handle PowerCent
+        # get the latest PowerCent version
+        print('* Installing PowerCent')
         # localpkg_found = False
         # if os.path.exists(os.path.join(os.path.dirname(__file__), 'inpanel.tar.gz')):
         #     # local install package found
@@ -281,11 +281,11 @@ class Install(object):
         # config listen port
         # port = self.find_free_port()
         if self.listen_port == 8888 or not self.listen_port.isdigit() or int(self.listen_port) < 5000:
-            port = self.input('InPanel Port [default: 8888, minimum: 5000]: ').strip()
+            port = self.input('PowerCent Port [default: 8888, minimum: 5000]: ').strip()
             if port and port.isdigit() and int(port) >= 5000:
                 self.listen_port = int(port)
         self._run('%s/config.py port "%s"' % (self.installpath, self.listen_port))
-        print('* InPanel will work on port "%s"' % self.listen_port)
+        print('* PowerCent will work on port "%s"' % self.listen_port)
 
     # def find_free_port(self, port_number):
     #     # find an unuse port
@@ -333,12 +333,12 @@ class Install(object):
             print('* VPSMate will continue to work !')
             self.listen_port = 8899
             self._run('%s/config.py port "%s"' % (self.installpath, self.listen_port))
-            print('* InPanel will work on port %s' % self.listen_port)
+            print('* PowerCent will work on port %s' % self.listen_port)
 
     def start_service(self):
         # start service
         if not os.path.exists(self.initd_script):
-            print('Starting InPanel [ %s ]' % FAILED)
+            print('Starting PowerCent [ %s ]' % FAILED)
             return False
         if self.distname in ('centos', 'redhat'):
             self._run('chkconfig inpanel on')
@@ -377,7 +377,7 @@ class Install(object):
         print('*                          *')
         print('============================')
         print('')
-        print('The URL of your InPanel is:'),
+        print('The URL of your PowerCent is:'),
         print('\033[4;34mhttp://%s:%s/\033[0m' % (self.detect_ip(), self.listen_port))
         print('')
         print('Username is: %s' % self.username)

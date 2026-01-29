@@ -1,5 +1,5 @@
 [Unit]
-Description = InPanel
+Description = PowerCent
 
 [Service]
 Type = simple

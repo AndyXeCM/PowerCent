@@ -3,7 +3,7 @@
 # Copyright (c) 2017 - 2019, doudoudzj
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the New BSD License.
+# PowerCent is distributed under the terms of the New BSD License.
 # The full license can be found in 'LICENSE'.
 
 '''Module for Apache Management.'''
@@ -669,7 +669,7 @@ def _getcontextrange(context, config):
     return [filepath, line_start, line_end]
 
 def _context_commentserver(ip, port, server_name, config=None):
-    """Comment a context using InPanel's special comment string '#v#'
+    """Comment a context using PowerCent's special comment string '#v#'
     """
     if config is None or ('_isdirty' in config and config['_isdirty']):
         config = loadconfig(APACHECONF, True)
@@ -679,7 +679,7 @@ def _context_commentserver(ip, port, server_name, config=None):
     return _comment(filepath, line_start, line_end)
 
 def _context_uncommentserver(ip, port, server_name, config=None):
-    """Uncomment a InPanel's special-commented context.
+    """Uncomment a PowerCent's special-commented context.
     """
     if config is None or ('_isdirty' in config and config['_isdirty']):
         config = loadconfig(APACHECONF, True)

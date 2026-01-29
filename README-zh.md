@@ -1,10 +1,10 @@
-# InPanel
+# PowerCent
 
 简体中文 | [English](./README.md)
 
 ## 介绍
 
-InPanel 是一个开源的 Linux 服务器管理工具，为得使服务器的管理变得简单、快捷。
+PowerCent 是一个开源的 Linux 服务器管理工具，为得使服务器的管理变得简单、快捷。
 
 ## 功能特性
 
@@ -21,11 +21,11 @@ InPanel 是一个开源的 Linux 服务器管理工具，为得使服务器的�
 
 ```bash
 # stable version
-curl -O https://raw.githubusercontent.com/inpanel/inpanel/main/install.py
+curl -O https://raw.githubusercontent.com/AndyXeCM/PowerCent/main/install.py
 python install.py
 
 # beta version
-curl -O https://raw.githubusercontent.com/inpanel/inpanel/dev/install.py
+curl -O https://raw.githubusercontent.com/AndyXeCM/PowerCent/dev/install.py
 python install.py --dev
 ```
 
@@ -39,7 +39,7 @@ rm -rf /usr/local/inpanel
 rm -f /etc/init.d/inpanel
 ```
 
-> 注意：卸载不会影响 InPanel 外的其它数据。InPanel 只是在 UI 层面对系统服务及功能进行管理配置，并不会在系统中生成多余的依赖及配置文件，无论卸载或安装，只会影响 InPanel 的数据，对系统已配置好的服务是没有影响的。
+> 注意：卸载不会影响 PowerCent 外的其它数据。PowerCent 只是在 UI 层面对系统服务及功能进行管理配置，并不会在系统中生成多余的依赖及配置文件，无论卸载或安装，只会影响 PowerCent 的数据，对系统已配置好的服务是没有影响的。
 
 ## 账号和密码
 
@@ -54,7 +54,7 @@ rm -f /etc/init.d/inpanel
 
 ## 开源许可
 
-InPanel 采用 [BSD](./LICENSE) 许可发布。
+PowerCent 采用 [BSD](./LICENSE) 许可发布。
 
 ## 作者
 
@@ -62,6 +62,6 @@ InPanel 采用 [BSD](./LICENSE) 许可发布。
 
 ## 信息
 
-使用文档：[inpanel.org](https://inpanel.org 'InPanel Docs')
+使用文档：[inpanel.org](https://inpanel.org 'PowerCent Docs')
 
-官方中文站：[inpanel.cn](http://inpanel.cn 'InPanel 官方中文站')
+官方中文站：[inpanel.cn](http://inpanel.cn 'PowerCent 官方中文站')

@@ -3,10 +3,10 @@
 # Copyright (c) 2017, Jackson Dou
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the New BSD License.
+# PowerCent is distributed under the terms of the New BSD License.
 # The full license can be found in 'LICENSE'.
 #
-# InPanel configuration command line interface script.
+# PowerCent configuration command line interface script.
 # Written by Jackson Dou
 
 set -e
@@ -41,7 +41,7 @@ config_help() {
         password_rand=$(date +%s%N | md5sum | cut -c 1-12)
     fi
     cat <<EOF
-InPanel Config Usage:
+PowerCent Config Usage:
 =======================================================================
 optional arguments:
           mode : runtime mode. value: prod, dev or demo
@@ -94,9 +94,9 @@ config_do() {
             fi
             if [ -z "${portcheck}" ]; then
                 sedi "s/^port =.*/port = $2/" $CONFIG_INI
-                echo 'Port changed: InPanel need to be restarted.'
+                echo 'Port changed: PowerCent need to be restarted.'
             elif [ $(sed '/^port =/!d;s/.*=//' $CONFIG_INI) = $2 ]; then
-                echo "Error: InPanel is already running on port $2."
+                echo "Error: PowerCent is already running on port $2."
             else
                 echo "Error: The port $2 is in use, please enter a new port number."
             fi

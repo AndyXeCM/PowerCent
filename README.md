@@ -1,10 +1,10 @@
-# InPanel
+# PowerCent
 
 English | [简体中文](README-zh.md)
 
 ## Introduction
 
-InPanel is an open source Linux server management tool, the goal of this project is to make server management easy and fast.
+PowerCent is an open source Linux server management tool, the goal of this project is to make server management easy and fast.
 
 ## Features
 
@@ -21,11 +21,11 @@ InPanel is an open source Linux server management tool, the goal of this project
 
 ```bash
 # stable version
-curl -O https://raw.githubusercontent.com/inpanel/inpanel/main/install.py
+curl -O https://raw.githubusercontent.com/AndyXeCM/PowerCent/main/install.py
 python install.py
 
 # beta version
-curl -O https://raw.githubusercontent.com/inpanel/inpanel/dev/install.py
+curl -O https://raw.githubusercontent.com/AndyXeCM/PowerCent/dev/install.py
 python install.py --dev
 ```
 
@@ -50,7 +50,7 @@ Please file an issue at [Issues](https://github.com/inpanel/inpanel/issues).
 
 ## License
 
-InPanel is released under the [BSD 3-Clause License](./LICENSE).
+PowerCent is released under the [BSD 3-Clause License](./LICENSE).
 
 ## Author
 
@@ -58,4 +58,4 @@ InPanel is released under the [BSD 3-Clause License](./LICENSE).
 
 ## Information
 
-Official Website: [inpanel.org](https://inpanel.org 'InPanel')
+Official Website: [inpanel.org](https://inpanel.org 'PowerCent')

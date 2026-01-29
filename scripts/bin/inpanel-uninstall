@@ -3,10 +3,10 @@
 # Copyright (c) 2017, Jackson Dou
 # All rights reserved.
 #
-# InPanel is distributed under the terms of the New BSD License.
+# PowerCent is distributed under the terms of the New BSD License.
 # The full license can be found in 'LICENSE'.
 #
-# InPanel uninstall script.
+# PowerCent uninstall script.
 
 set -e
 
@@ -18,7 +18,7 @@ fi
 UNINSTALL='/usr/local/bin/inpanel-uninstall'
 
 uninstall_do() {
-    echo 'Deleting InPanel... '
+    echo 'Deleting PowerCent... '
     inpanel stop
     rm -f /etc/init.d/inpanel
     # delete inpanel binary file
@@ -30,10 +30,10 @@ uninstall_do() {
     # backup data
     test ! -d /root/inpanel_backup_data && mkdir /root/inpanel_backup_data
     mv /usr/local/inpanel/data /root/inpanel_backup_data
-    echo 'Backup InPanel Config to /root/inpanel_backup_data'
+    echo 'Backup PowerCent Config to /root/inpanel_backup_data'
     # delete uninstall script
     rm -f $UNINSTALL
-    echo 'InPanel uninstalled successfully !'
+    echo 'PowerCent uninstalled successfully !'
 }
 
 if [ $0 = $UNINSTALL ]; then
